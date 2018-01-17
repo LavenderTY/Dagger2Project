@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.ty.dagger2project.listener.EventListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_cashier"
+            style="@style/Main_Layout_Vertical"
+            android:background="@color/collect_money_color"
+            android:onClick="@{listener.click}">
+
+
+            <ImageView
+                style="@style/Main_Image"
+                android:src="@drawable/collect_money" />
+
+            <TextView
+                style="@style/Main_TextView"
+                android:text="收银" />
+        </LinearLayout>
+
+        <TextView style="@style/Main_Horizontal" />
+
+        <LinearLayout
+            style="@style/Main_Layout_Vertical"
+            android:background="@color/revoke_color"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_revoke"
+                style="@style/Main_Layout_Horizontal"
+                android:background="@color/revoke_color"
+                android:onClick="@{listener.click}">
+
+                <ImageView
+                    style="@style/Main_Image"
+                    android:src="@drawable/revoke" />
+
+                <TextView
+                    style="@style/Main_TextView"
+                    android:text="撤销" />
+            </LinearLayout>
+
+            <TextView style="@style/Main_Vertical" />
+
+            <LinearLayout
+                android:id="@+id/ll_pre_authorization"
+                style="@style/Main_Layout_Horizontal"
+                android:background="@color/pre_authorization"
+                android:onClick="@{listener.click}">
+
+                <ImageView
+                    style="@style/Main_Image"
+                    android:src="@drawable/pre_authorization" />
+
+                <TextView
+                    style="@style/Main_TextView"
+                    android:text="预授权" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView style="@style/Main_Horizontal" />
+
+        <LinearLayout
+            style="@style/Main_Layout_Vertical"
+            android:background="@color/revoke_color"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_back_goods"
+                style="@style/Main_Layout_Horizontal"
+                android:background="@color/back_goods_color"
+                android:onClick="@{listener.click}">
+
+                <ImageView
+                    style="@style/Main_Image"
+                    android:src="@drawable/back_goods" />
+
+                <TextView
+                    style="@style/Main_TextView"
+                    android:text="退货" />
+            </LinearLayout>
+
+            <TextView style="@style/Main_Vertical" />
+
+            <LinearLayout
+                android:id="@+id/ll_receivables"
+                style="@style/Main_Layout_Horizontal"
+                android:background="@color/cash_accounting"
+                android:onClick="@{listener.click}">
+
+                <ImageView
+                    style="@style/Main_Image"
+                    android:src="@drawable/collect_detail" />
+
+                <TextView
+                    style="@style/Main_TextView"
+                    android:text="收款明细" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/Main_Horizontal"
+            android:layout_height="20dp" />
+    </LinearLayout>
+</layout>

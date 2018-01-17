@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.ty.dagger2project.listener.EventListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/Main_Layout_Vertical"
+            android:background="@color/revoke_color"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_card_vouchers"
+                style="@style/Main_Layout_Horizontal"
+                android:background="@color/card_ticket_verification"
+                android:onClick="@{listener.click}">
+
+                <ImageView
+                    style="@style/Main_Image"
+                    android:src="@drawable/card_ticket_verification" />
+
+                <TextView
+                    style="@style/Main_TextView"
+                    android:text="卡券验核" />
+            </LinearLayout>
+
+            <TextView style="@style/Main_Vertical" />
+
+            <LinearLayout
+                android:id="@+id/ll_preferential_purchase"
+                style="@style/Main_Layout_Horizontal"
+                android:background="@color/pre_authorization"
+                android:onClick="@{listener.click}">
+
+                <ImageView
+                    style="@style/Main_Image"
+                    android:src="@drawable/preferential_buy" />
+
+                <TextView
+                    style="@style/Main_TextView"
+                    android:text="优惠买单" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView style="@style/Main_Horizontal" />
+
+        <LinearLayout
+            style="@style/Main_Layout_Vertical"
+            android:background="@color/revoke_color"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_electronic_cash"
+                style="@style/Main_Layout_Horizontal"
+                android:background="@color/back_goods_color"
+                android:onClick="@{listener.click}">
+
+                <ImageView
+                    style="@style/Main_Image"
+                    android:src="@drawable/electron_cash" />
+
+                <TextView
+                    style="@style/Main_TextView"
+                    android:text="电子现金" />
+            </LinearLayout>
+
+            <TextView style="@style/Main_Vertical" />
+
+            <LinearLayout
+                android:id="@+id/ll_more"
+                style="@style/Main_Layout_Horizontal"
+                android:background="@color/more_color"
+                android:onClick="@{listener.click}">
+
+                <ImageView
+                    style="@style/Main_Image"
+                    android:src="@drawable/more" />
+
+                <TextView
+                    style="@style/Main_TextView"
+                    android:text="更多" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView style="@style/Main_Horizontal" />
+
+        <LinearLayout
+            style="@style/Main_Layout_Vertical"
+            android:background="@color/white" />
+
+        <TextView
+            style="@style/Main_Horizontal"
+            android:layout_height="20dp" />
+    </LinearLayout>
+</layout>

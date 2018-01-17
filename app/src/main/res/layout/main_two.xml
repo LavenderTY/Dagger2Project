@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.ty.dagger2project.listener.EventListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/Main_Layout_Vertical"
+            android:background="@color/revoke_color"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_check_balance"
+                style="@style/Main_Layout_Horizontal"
+                android:background="@color/back_goods_color"
+                android:onClick="@{listener.click}">
+
+                <ImageView
+                    style="@style/Main_Image"
+                    android:src="@drawable/query_balance" />
+
+                <TextView
+                    style="@style/Main_TextView"
+                    android:text="余额查询" />
+            </LinearLayout>
+
+            <TextView style="@style/Main_Vertical" />
+
+            <LinearLayout
+                android:id="@+id/ll_cash_account"
+                style="@style/Main_Layout_Horizontal"
+                android:background="@color/revoke_color"
+                android:onClick="@{listener.click}">
+
+                <ImageView
+                    style="@style/Main_Image"
+                    android:src="@drawable/cash_accounting" />
+
+                <TextView
+                    style="@style/Main_TextView"
+                    android:text="现金记账" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView style="@style/Main_Horizontal" />
+
+        <LinearLayout
+            style="@style/Main_Layout_Vertical"
+            android:background="@color/revoke_color"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_transfer"
+                style="@style/Main_Layout_Horizontal"
+                android:background="@color/collect_money_color"
+                android:onClick="@{listener.click}">
+
+                <ImageView
+                    style="@style/Main_Image"
+                    android:src="@drawable/transfer" />
+
+                <TextView
+                    style="@style/Main_TextView"
+                    android:text="转账" />
+            </LinearLayout>
+
+            <TextView style="@style/Main_Vertical" />
+
+            <LinearLayout
+                android:id="@+id/ll_balance"
+                style="@style/Main_Layout_Horizontal"
+                android:background="@color/pre_authorization"
+                android:onClick="@{listener.click}">
+
+                <ImageView
+                    style="@style/Main_Image"
+                    android:src="@drawable/settle_account" />
+
+                <TextView
+                    style="@style/Main_TextView"
+                    android:text="结算" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView style="@style/Main_Horizontal" />
+
+        <LinearLayout
+            style="@style/Main_Layout_Vertical"
+            android:background="@color/revoke_color"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_terminal_management"
+                style="@style/Main_Layout_Horizontal"
+                android:background="@color/devices_manager_color"
+                android:onClick="@{listener.click}">
+
+                <ImageView
+                    style="@style/Main_Image"
+                    android:src="@drawable/devices_manager" />
+
+                <TextView
+                    style="@style/Main_TextView"
+                    android:text="终端管理" />
+            </LinearLayout>
+
+            <TextView style="@style/Main_Vertical" />
+
+            <LinearLayout
+                android:id="@+id/ll_card_application"
+                style="@style/Main_Layout_Horizontal"
+                android:background="@color/card_ticket_verification"
+                android:onClick="@{listener.click}">
+
+                <ImageView
+                    style="@style/Main_Image"
+                    android:src="@drawable/card_apply_for" />
+
+                <TextView
+                    style="@style/Main_TextView"
+                    android:text="信用卡申请" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/Main_Horizontal"
+            android:layout_height="20dp" />
+    </LinearLayout>
+</layout>

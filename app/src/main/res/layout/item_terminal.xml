@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/ll_terminal"
+        style="@style/Base_Layout">
+
+        <ImageView
+            style="@style/Base_Image"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/terminal" />
+
+        <TextView
+            android:id="@+id/terminal_title"
+            style="@style/Base_TextView"
+            android:layout_width="0dp" />
+
+        <ImageView
+            style="@style/Base_Image"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/into_icon" />
+    </LinearLayout>
+</layout>

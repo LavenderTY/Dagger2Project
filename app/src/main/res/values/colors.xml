@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--#3F51B5-->
+    <color name="colorPrimary">#609bff</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#ffffff</color>
+    <!--主界面-->
+    <color name="collect_money_color">#609bff</color>
+    <color name="revoke_color">#ffc342</color>
+    <color name="back_goods_color">#f4754b</color>
+    <color name="devices_manager_color">#609b33</color>
+    <color name="pre_authorization">#b569f7</color>
+    <color name="cash_accounting">#41b9b1</color>
+    <color name="card_ticket_verification">#41D9b1</color>
+    <color name="more_color">#696969</color>
+
+    <color name="viewpager_point">#e1dede</color>
+    <color name="black">#000000</color>
+</resources>
