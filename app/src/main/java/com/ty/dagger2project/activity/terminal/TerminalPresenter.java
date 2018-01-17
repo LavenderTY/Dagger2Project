@@ -4,6 +4,7 @@ import com.ty.dagger2project.app.AppManager;
 import com.ty.dagger2project.base.BasePresenterImpl;
 import com.ty.dagger2project.model.TerminalModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -12,10 +13,10 @@ import javax.inject.Inject;
  * Created by Lavender on 2018/1/11.
  */
 public class TerminalPresenter extends BasePresenterImpl<TerminalContract.View> implements TerminalContract.Presenter {
-    private List<TerminalModel> mList;
+    private List<TerminalModel> mList = new ArrayList<>();
 
     @Inject
-    public TerminalPresenter(AppManager manager) {
+    public TerminalPresenter() {
         mList.add(new TerminalModel("终端登录"));
         mList.add(new TerminalModel("终端主密钥下载"));
         mList.add(new TerminalModel("终端参数查询"));

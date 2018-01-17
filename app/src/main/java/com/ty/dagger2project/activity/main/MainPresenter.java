@@ -1,5 +1,6 @@
 package com.ty.dagger2project.activity.main;
 
+import com.ty.dagger2project.MyApplication;
 import com.ty.dagger2project.R;
 import com.ty.dagger2project.app.AppManager;
 import com.ty.dagger2project.base.BasePresenterImpl;

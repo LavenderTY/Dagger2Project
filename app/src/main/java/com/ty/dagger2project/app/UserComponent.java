@@ -1,9 +1,6 @@
 package com.ty.dagger2project.app;
 
-import com.ty.dagger2project.model.GetOrderRes;
 import com.ty.dagger2project.scope.UserScope;
-
-import dagger.BindsInstance;
 import dagger.Subcomponent;
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;

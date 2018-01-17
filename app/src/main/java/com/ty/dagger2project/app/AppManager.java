@@ -42,6 +42,9 @@ public class AppManager implements HasActivityInjector {
     public AppManager(ApiService service, UserComponent.Builder builder) {
         this.service = service;
         this.userComponentBuilder = builder;
+    }
+
+    public void setInjector(){
         userComponent = userComponentBuilder.build();
         userComponent.inject(this);
     }

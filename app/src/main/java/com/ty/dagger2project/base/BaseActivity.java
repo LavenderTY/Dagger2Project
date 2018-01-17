@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.ty.dagger2project.app.AppManager;
+
 import javax.inject.Inject;
 
 import dagger.android.AndroidInjection;
@@ -25,6 +27,9 @@ public class BaseActivity<T extends BasePresenter> extends AppCompatActivity imp
     }
 
     @Inject
+    AppManager appManager;
+
+    @Inject
     DispatchingAndroidInjector<Fragment> injector;
 
     @Inject
@@ -35,6 +40,7 @@ public class BaseActivity<T extends BasePresenter> extends AppCompatActivity imp
         androidInject();
         super.onCreate(savedInstanceState);
         presenter.onViewAdded(this);
+        appManager.setInjector();
     }
 
     protected void androidInject() {
@@ -57,6 +63,7 @@ public class BaseActivity<T extends BasePresenter> extends AppCompatActivity imp
     public void finishView() {
 
     }
+
     @Override
     public AndroidInjector<Fragment> supportFragmentInjector() {
         return injector;
