@@ -13,6 +13,6 @@ import dagger.android.support.AndroidSupportInjectionModule;
 @Module
 public abstract class UserBindingModule {
 
-    @ContributesAndroidInjector(modules = {TerminalModule.class})
-    abstract TerminalManagementActivity managementActivity();
+//    @ContributesAndroidInjector(modules = {TerminalModule.class})
+//    abstract TerminalManagementActivity managementActivity();
 }

@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
+
+        <variable
+            name="terminalModel"
+            type="com.ty.dagger2project.model.TerminalModel" />
+
+        <variable
+            name="terminalPresenter"
+            type="com.ty.dagger2project.activity.terminal.TerminalPresenter" />
+    </data>
+
     <LinearLayout
         android:id="@+id/ll_terminal"
-        style="@style/Base_Layout">
+        style="@style/Base_Layout"
+        android:layout_height="50dp"
+        android:onClick="@{(view) -> terminalPresenter.onItemClick(view, terminalModel)}">
 
         <ImageView
             style="@style/Base_Image"
@@ -13,7 +26,8 @@
         <TextView
             android:id="@+id/terminal_title"
             style="@style/Base_TextView"
-            android:layout_width="0dp" />
+            android:layout_width="0dp"
+            android:text="@{terminalModel.title}" />
 
         <ImageView
             style="@style/Base_Image"

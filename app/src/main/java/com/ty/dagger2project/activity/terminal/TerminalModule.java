@@ -2,6 +2,7 @@ package com.ty.dagger2project.activity.terminal;
 
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 
 import com.ty.dagger2project.adapter.TerminalManagementAdapter;
 
@@ -18,13 +19,13 @@ import dagger.Provides;
 @Module
 public class TerminalModule {
     @Provides
-    public TerminalContract.Presenter provideTerminalPresenter(TerminalPresenter presenter) {
+    public TerminalContract.Presenter provideTerminalContract(TerminalPresenter presenter) {
         return presenter;
     }
 
     @Provides
-    public TerminalManagementAdapter provideTerminalManagementAdapter(TerminalManagementActivity activity, TerminalPresenter presenter) {
-        return new TerminalManagementAdapter(activity, presenter.getList());
+    public TerminalManagementAdapter provideTerminalManagementAdapter(TerminalPresenter presenter) {
+        return new TerminalManagementAdapter(presenter, presenter.getList());
     }
 
     @Provides

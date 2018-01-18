@@ -2,6 +2,8 @@ package com.ty.dagger2project.app;
 
 import com.ty.dagger2project.activity.main.MainActivity;
 import com.ty.dagger2project.activity.main.MainModule;
+import com.ty.dagger2project.activity.terminal.TerminalManagementActivity;
+import com.ty.dagger2project.activity.terminal.TerminalModule;
 import com.ty.dagger2project.scope.ActivityScope;
 
 import dagger.Module;
@@ -19,4 +21,8 @@ public abstract class AppBindingModule {
     @ContributesAndroidInjector(modules = MainModule.class)
     @ActivityScope
     abstract MainActivity mainActivity();
+
+    @ContributesAndroidInjector(modules = {TerminalModule.class})
+    @ActivityScope
+    abstract TerminalManagementActivity managementActivity();
 }

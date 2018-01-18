@@ -8,9 +8,11 @@ package com.ty.dagger2project.model;
 
 public class TerminalModel {
     private String title;
+    private int position;
 
-    public TerminalModel(String title) {
+    public TerminalModel(String title, int position) {
         this.title = title;
+        this.position = position;
     }
 
     public String getTitle() {
@@ -19,5 +21,21 @@ public class TerminalModel {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    @Override
+    public String toString() {
+        return "TerminalModel{" +
+                "title='" + title + '\'' +
+                ", position=" + position +
+                '}';
     }
 }

@@ -6,7 +6,10 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.ty.dagger2project.app.AppComponent;
 import com.ty.dagger2project.app.AppManager;
+import com.ty.dagger2project.app.DaggerAppComponent;
+import com.ty.dagger2project.app.UserComponent;
 
 import javax.inject.Inject;
 
@@ -40,7 +43,6 @@ public class BaseActivity<T extends BasePresenter> extends AppCompatActivity imp
         androidInject();
         super.onCreate(savedInstanceState);
         presenter.onViewAdded(this);
-        appManager.setInjector();
     }
 
     protected void androidInject() {

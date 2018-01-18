@@ -44,11 +44,6 @@ public class AppManager implements HasActivityInjector {
         this.userComponentBuilder = builder;
     }
 
-    public void setInjector(){
-        userComponent = userComponentBuilder.build();
-        userComponent.inject(this);
-    }
-
 //    public Flowable<Pokemon> loginWithUserName(String userName) {
 //        //concatWith 将两个Maybe链接起来
 //        return getPokemonMaybeFromCache()
