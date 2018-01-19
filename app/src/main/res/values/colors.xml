@@ -18,4 +18,5 @@
 
     <color name="viewpager_point">#e1dede</color>
     <color name="black">#000000</color>
+    <color name="hint_color">#B3B3B3</color>
 </resources>

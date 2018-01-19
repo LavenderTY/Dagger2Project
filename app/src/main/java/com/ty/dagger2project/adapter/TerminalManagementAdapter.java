@@ -1,10 +1,7 @@
 package com.ty.dagger2project.adapter;
 
-import android.content.Context;
-import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -16,8 +13,6 @@ import com.ty.dagger2project.databinding.ItemTerminalBinding;
 import com.ty.dagger2project.model.TerminalModel;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 /**
  * Created by Lavender on 2018/1/11.

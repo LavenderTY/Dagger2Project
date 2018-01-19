@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 
-import com.ty.dagger2project.activity.LoginActivity;
+import com.ty.dagger2project.activity.login.LoginActivity;
 import com.ty.dagger2project.activity.TerminalQueryActivity;
 import com.ty.dagger2project.base.BasePresenterImpl;
 import com.ty.dagger2project.model.TerminalModel;

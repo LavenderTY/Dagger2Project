@@ -4,6 +4,9 @@ import android.app.Activity;
 
 import com.ty.dagger2project.model.GetOrderRes;
 import com.ty.dagger2project.rxjava.ApiService;
+import com.ty.dagger2project.util.JsonUtil;
+
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -11,6 +14,8 @@ import javax.inject.Singleton;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
+import io.reactivex.Flowable;
+import io.reactivex.Maybe;
 
 /**
  * Created by Lavender on 2018/1/12.
@@ -34,9 +39,9 @@ public class AppManager implements HasActivityInjector {
     //Subcomponent
     private final UserComponent.Builder userComponentBuilder;
 
-    private GetOrderRes resCache;
-
     private UserComponent userComponent;
+
+    private GetOrderRes resCache;
 
     @Inject
     public AppManager(ApiService service, UserComponent.Builder builder) {
@@ -44,40 +49,40 @@ public class AppManager implements HasActivityInjector {
         this.userComponentBuilder = builder;
     }
 
-//    public Flowable<Pokemon> loginWithUserName(String userName) {
-//        //concatWith 将两个Maybe链接起来
-//        return getPokemonMaybeFromCache()
-//                .concatWith(service.getPokemon(userName).toMaybe())
-//                .take(1)
-//                .doOnNext(this::createUserSession);
-//    }
+    public Flowable<GetOrderRes> login(Map<String,Object> map) {
+        //concatWith 将两个Maybe链接起来
+        return getPokemonMaybeFromCache()
+                .concatWith(service.queryOrderInfo(JsonUtil.mapToRequestBody(map)).toMaybe())
+                .take(1)
+                .doOnNext(this::createUserSession);
+    }
 
-//    private void createUserSession(Pokemon pokemon) {
-//        userComponent = userComponentBuilder
-//                .pokeMon(pokemon)
-//                .build();
-//        userComponent.inject(this);
-//    }
+    private void createUserSession(GetOrderRes res) {
+        userComponent = userComponentBuilder
+                .getOrderRes(res)
+                .build();
+        userComponent.inject(this);
+    }
 
 
-//    // 2.X新增，行为类似Observable，可能会有一个数据或一个错误，也可能什么都没有。
-//    // 可以将其视为一种返回可空值的方法。这种方法如果不抛出异常的话，将总是会返回一些东西，
-//    // 但是返回值可能为空，也可能不为空。按照Reactive Streams规范设计，
-//    // 遵循协议onSubscribe (onSuccess/onError/onComplete)
-//    private Maybe<Pokemon> getPokemonMaybeFromCache() {
-//        if (pokemonCache != null) {
-//            //创建Maybe事件队列
-//            return Maybe.just(pokemonCache);
-//        } else {
-//            return Maybe.empty();
-//        }
-//    }
+    // 2.X新增，行为类似Observable，可能会有一个数据或一个错误，也可能什么都没有。
+    // 可以将其视为一种返回可空值的方法。这种方法如果不抛出异常的话，将总是会返回一些东西，
+    // 但是返回值可能为空，也可能不为空。按照Reactive Streams规范设计，
+    // 遵循协议onSubscribe (onSuccess/onError/onComplete)
+    private Maybe<GetOrderRes> getPokemonMaybeFromCache() {
+        if (resCache != null) {
+            //创建Maybe事件队列
+            return Maybe.just(resCache);
+        } else {
+            return Maybe.empty();
+        }
+    }
 
-    public boolean isLoggedIn() {
+    public boolean isLoginIn() {
         return userComponent != null;
     }
 
-    public void logOut() {
+    public void loginOut() {
         resCache = null;
         userComponent = null;
     }
