@@ -2,11 +2,7 @@ package com.ty.dagger2project.activity.terminal;
 
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
-
 import com.ty.dagger2project.adapter.TerminalManagementAdapter;
-
-import java.util.ArrayList;
 
 import dagger.Module;
 import dagger.Provides;

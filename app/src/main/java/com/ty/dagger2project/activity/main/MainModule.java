@@ -1,13 +1,7 @@
 package com.ty.dagger2project.activity.main;
 
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
-
-import com.tmall.ultraviewpager.IUltraIndicatorBuilder;
 import com.tmall.ultraviewpager.UltraViewPager;
 import com.ty.dagger2project.adapter.UltraPagerAdapter;
-import com.ty.dagger2project.model.MainModel;
 import com.ty.dagger2project.util.GlideImageLoader;
 
 import dagger.Module;
